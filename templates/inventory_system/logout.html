@@ -1,0 +1,30 @@
+
+<!--logout.html-->
+{% extends "../layout.html" %}
+{% load static %}
+{% block content %}
+
+<!--<div class="content-section">
+    <small class="text-muted">
+        <a href="{% url 'login' %}">Login Again</a>
+
+    </small>
+</div>
+{% endblock %}-->
+
+
+<form id="logoutForm" action="{% url 'logout' %}" method="post" style="display: none;">
+    {% csrf_token %}
+</form>
+<button id="logoutButton" style="display: none;">Logout</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            document.getElementById('logoutForm').submit();
+        });
+    });
+</script>
+{% endblock %}
+
+

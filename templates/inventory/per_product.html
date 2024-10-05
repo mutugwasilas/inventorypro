@@ -1,0 +1,103 @@
+
+<!--per product-->
+{% extends "../layout.html" %}
+{% block content %}
+
+<div class="content-section">
+    <div class="row mx-auto justify-content-center">
+
+       <!--type-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Vehicle Type</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-car"></i> </i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.vehicle_type }}</h3>
+            </div>
+        </div>
+
+        <!--in fleet-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Quantity In Fleet</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-warehouse"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.quantity_in_fleet }}</h3>
+            </div>
+        </div>
+
+
+        <!--in use-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Quantity In Use</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-warehouse"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.quantity_in_use }}</h3>
+            </div>
+        </div>
+
+        <!--cost per refuel-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Cost Per Refuel!! {{ inventory.name }}</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-dollar-sign"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.cost_per_refuel }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Maintenance </h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-dollar-sign"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.maintenance }}</h3>
+            </div>
+        </div>
+
+
+        <!--total-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Total</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-dollar-sign"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.total }}</h3>
+            </div>
+        </div>
+        
+        <!--entry date-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Entry Date</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-calendar-alt"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.entry_date }}</h3>
+            </div>
+        </div>
+
+         <!--last sales date-->
+        <div class="card m-4" style="width: 16rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Last Update</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span> <i class="fas fa-calendar-alt"></i> </span>
+                </div>
+                <h3 class="text-center">{{ inventory.last_update }}</h3>
+            </div>
+        </div>
+
+        
+        <a class="btn btn-outline-success btn-sn mb-3" href="{% url 'update_inventory' inventory.id %}">Update Inventory</a>
+        <a class="btn btn-danger btn-sn" href="{% url 'delete_inventory' inventory.id %}">Delete Inventory</a>
+    </div>
+</div>
+{% endblock %}
